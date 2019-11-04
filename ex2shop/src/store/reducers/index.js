@@ -3,6 +3,7 @@ import * as types from "../actions/type";
 
 const initialState = {
   basket: [],
+  price: 0,
 
   shop: [
     {

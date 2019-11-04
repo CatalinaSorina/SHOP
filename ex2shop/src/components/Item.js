@@ -5,7 +5,9 @@ import "./Item.css";
 const Item = props => {
   return (
     <React.Fragment>
-      <img alt="img" src={props.item.imageUrl} onClick={props.addItem} />
+      <button onClick={props.addItem}>
+        <img alt="img" src={props.item.imageUrl} />
+      </button>
     </React.Fragment>
   );
 };

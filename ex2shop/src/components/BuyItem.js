@@ -20,10 +20,14 @@ const BuyItem = props => {
       <td>{props.item.price}</td>
       <td>{props.item.qty}</td>
       <td>
-        <ButonAdd className="add">Add</ButonAdd>
+        <ButonAdd onClick={props.addItem} className="add">
+          Add
+        </ButonAdd>
       </td>
       <td>
-        <ButonRemove className="remove">Remove</ButonRemove>
+        <ButonRemove onClick={props.removeItem} className="remove">
+          Remove
+        </ButonRemove>
       </td>
     </tr>
   );
