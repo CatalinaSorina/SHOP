@@ -1,6 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
-import { addItem, removeItem } from "../store/actions/index";
 import styled from "styled-components";
 
 import BuyItem from "./BuyItem";
@@ -17,6 +15,8 @@ const TrHead = styled.tr`
   border-radius: 1rem;
   font: 1.5rem Cursive;
   padding: 1rem;
+  display: flex;
+  align-items: flex-end;
 
   th {
     color: white;
@@ -47,53 +47,40 @@ const Table = styled.table`
 
 const Div = styled.div`
   height: 15vh;
-  padding: 1rem;
+  width: 98vw;
+  padding: 1.5rem;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
-class Basket extends React.Component {
-  render() {
-    return (
-      this.props.basket && (
-        <React.Fragment>
-          <Table>
-            <TrHead>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Total price</th>
-            </TrHead>
-            <Div>
-              {this.props.basket.map(item => (
-                <BuyItem
-                  key={item.id}
-                  item={item}
-                  addItem={() => addItem(item)}
-                  removeItem={() => removeItem(item.id)}
-                />
-              ))}
-            </Div>
-            <TrBottom>{this.props.price}</TrBottom>
-          </Table>
-        </React.Fragment>
-      )
-    );
-  }
-}
-
-const mapStateToProps = state => {
-  console.log(state);
-  return {
-    basket: state.basket,
-    price: state.price
-  };
+const Basket = props => {
+  return (
+    props.basket && (
+      <React.Fragment>
+        <Table>
+          <TrHead>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total price</th>
+          </TrHead>
+          <Div>
+            {props.basket.map(item => (
+              <BuyItem
+                key={item.id}
+                item={item}
+                addItem={() => props.addItem(item)}
+                removeItem={() => props.removeItem(item.id)}
+              />
+            ))}
+          </Div>
+          <TrBottom>{props.price}</TrBottom>
+        </Table>
+      </React.Fragment>
+    )
+  );
 };
 
-const mapDispatchToProps = {
-  addItem,
-  removeItem
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Basket);
+export default Basket;

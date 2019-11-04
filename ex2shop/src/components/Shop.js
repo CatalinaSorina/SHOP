@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { addItem, removeItem } from "../store/actions/index";
 
 import Item from "./Item";
+import Basket from "./Basket";
 
 class Shop extends React.Component {
   render() {
@@ -13,10 +14,17 @@ class Shop extends React.Component {
             <Item
               key={item.id}
               item={item}
-              addItem={() => addItem(item)}
-              removeItem={() => removeItem(item.id)}
+              addItem={() => this.props.addItem(item)}
+              removeItem={() => this.props.removeItem(item.id)}
             />
           ))}
+          <p>Your shopping Basket</p>
+          <Basket
+            basket={this.props.basket}
+            price={this.props.price}
+            addItem={this.props.addItem}
+            removeItem={this.props.removeItem}
+          />
         </React.Fragment>
       )
     );
@@ -26,7 +34,9 @@ class Shop extends React.Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    shop: state.shop
+    shop: state.shop,
+    basket: state.basket,
+    price: state.price
   };
 };
 
