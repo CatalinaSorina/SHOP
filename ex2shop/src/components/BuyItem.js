@@ -1,5 +1,14 @@
 import React from "react";
-import "BuyItem.css";
+import styled from "styled-components";
+import BackgroundAddImage from "../assets/button_add.png";
+import BackgroundRemoveImage from "../assets/button_remove.png";
+
+const ButonAdd = styled.button`
+  background-image: url(${BackgroundAddImage});
+`;
+const ButonRemove = styled.button`
+  background-image: url(${BackgroundRemoveImage});
+`;
 
 const BuyItem = props => {
   return (
@@ -11,10 +20,10 @@ const BuyItem = props => {
       <td>{props.item.price}</td>
       <td>{props.item.qty}</td>
       <td>
-        <button className="add">Add</button>
+        <ButonAdd className="add">Add</ButonAdd>
       </td>
       <td>
-        <button className="remove">Remove</button>
+        <ButonRemove className="remove">Remove</ButonRemove>
       </td>
     </tr>
   );

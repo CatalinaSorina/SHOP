@@ -49,12 +49,15 @@ const initialState = {
 const shopReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.ADD_TO_BASKET:
-      const item = action.payload.push({ qty: 1 });
-      let basket = state.basket.map(itemArr => {
-        if (itemArr.id === action.payload.id) item.qty++;
-        else basket.push(item);
-      });
-
+      let item = state.basket.filter(
+        itemFilter => action.payload.id === itemFilter.id
+      );
+      if (item) {
+        item.qty++;
+      } else {
+        item = { ...action.payload, qty: 1 };
+      }
+      const basket = [...state.basket, item];
       return {
         ...state,
         basket: basket

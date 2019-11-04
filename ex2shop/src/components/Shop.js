@@ -13,8 +13,8 @@ class Shop extends React.Component {
             <Item
               key={item.id}
               item={item}
-              addItem={addItem(item)}
-              removeItem={removeItem(item.id)}
+              addItem={() => addItem(item)}
+              removeItem={() => removeItem(item.id)}
             />
           ))}
         </React.Fragment>
