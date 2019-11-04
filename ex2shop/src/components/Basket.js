@@ -15,7 +15,7 @@ const TrHead = styled.tr`
   width: 90vw;
   background-color: gray;
   border-radius: 1rem;
-  font: 2rem Cursive;
+  font: 1.5rem Cursive;
   padding: 1rem;
 
   th {
@@ -29,7 +29,7 @@ const TrBottom = styled.tr`
   width: 90vw;
   background-color: #4b7891;
   border-radius: 1rem;
-  font: 2rem Cursive;
+  font: 1.5rem Cursive;
   padding: 1rem;
   color: white;
   text-align: right;
@@ -46,7 +46,7 @@ const Table = styled.table`
 `;
 
 const Div = styled.div`
-  height: 40vh;
+  height: 15vh;
   padding: 1rem;
 `;
 
