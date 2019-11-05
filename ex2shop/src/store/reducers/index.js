@@ -73,10 +73,22 @@ const shopReducer = (state = initialState, action) => {
 			};
 
 		case types.REMOVE_ITEM:
-			const basketWithItemRemoved = state.basket.filter((item) => item.id !== action.payload);
+			let basketWithItemRemoved = state.basket;
+			let priceLeft = state.price;
+			basketWithItemRemoved.map((item) => {
+				if (item.id === action.payload) {
+					if (item.qty === 1) {
+						basketWithItemRemoved = state.basket.filter((item) => item.id !== action.payload);
+					} else {
+						item.qty--;
+					}
+					priceLeft -= item.price;
+				}
+			});
 			return {
 				...state,
-				basket: basketWithItemRemoved
+				basket: basketWithItemRemoved,
+				price: priceLeft
 			};
 		default:
 			return state;
