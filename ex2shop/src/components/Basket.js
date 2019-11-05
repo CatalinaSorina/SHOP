@@ -61,6 +61,7 @@ const Basket = (props) => {
 			<React.Fragment>
 				<Table>
 					<TrHead>
+						<th />
 						<th>Product</th>
 						<th>Price</th>
 						<th>Quantity</th>
@@ -71,7 +72,7 @@ const Basket = (props) => {
 							<BuyItem
 								key={item.id}
 								item={item}
-								addItem={() => props.addItem(item)}
+								addItem={() => props.addItem(item.id)}
 								removeItem={() => props.removeItem(item.id)}
 							/>
 						))}

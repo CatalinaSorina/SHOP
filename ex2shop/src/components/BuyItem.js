@@ -27,11 +27,16 @@ const Tr = styled.tr`
 	justify-content: space-around;
 `;
 
+const Img = styled.img`
+	width: 1rem;
+	margin: 0;
+`;
+
 const BuyItem = (props) => {
 	return (
 		<Tr>
 			<td>
-				<img alt="img" src={props.item.imageUrl} onClick={props.addItem} />
+				<Img alt="img" src={props.item.imageUrl} onClick={props.addItem} />
 			</td>
 			<td>{props.item.name}</td>
 			<td>{props.item.price}</td>
