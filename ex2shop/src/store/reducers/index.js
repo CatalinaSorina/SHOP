@@ -59,8 +59,8 @@ const shopReducer = (state = initialState, action) => {
 			};
 
 		case types.ADD_QTY_TO_ITEM:
-			let price = 0;
-			const basketItemQty = state.basket.map((item) => {
+			let price = state.price;
+			state.basket.map((item) => {
 				if (item.id === action.payload) {
 					item.qty++;
 					price += item.price;
@@ -68,7 +68,7 @@ const shopReducer = (state = initialState, action) => {
 			});
 			return {
 				...state,
-				basket: basketItemQty,
+				basket: state.basket,
 				price: price
 			};
 
