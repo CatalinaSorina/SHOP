@@ -1,7 +1,9 @@
 {
 	"name": "ex2shop",
 	"version": "0.1.0",
-	"private": true,
+	"license": "UNLICENSED",
+	"main": "index.js",
+	"private": false,
 	"dependencies": {
 		"axios": "^0.19.0",
 		"react": "^16.11.0",
@@ -10,13 +12,13 @@
 		"react-scripts": "3.2.0",
 		"redux": "^4.0.4",
 		"redux-devtools-extension": "^2.13.8",
-		"uui": "^1.0.7",
-		"predeploy": "yarn run build",
-		"deploy": "gh-pages -b master -d build"
+		"uui": "^1.0.7"
 	},
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
+		"predeploy": "yarn run build",
+		"deploy": "gh-pages -b master -d build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},
