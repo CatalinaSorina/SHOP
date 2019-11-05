@@ -77,7 +77,7 @@ const Basket = (props) => {
 							/>
 						))}
 					</Div>
-					<TrBottom>{props.price}</TrBottom>
+					<TrBottom>{props.price.toFixed(2)}</TrBottom>
 				</Table>
 			</React.Fragment>
 		)

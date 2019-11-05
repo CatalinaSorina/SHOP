@@ -78,7 +78,7 @@ const shopReducer = (state = initialState, action) => {
 			basketWithItemRemoved.map((item) => {
 				if (item.id === action.payload) {
 					if (item.qty === 1) {
-						basketWithItemRemoved = state.basket.filter((item) => item.id !== action.payload);
+						basketWithItemRemoved = basketWithItemRemoved.filter((item) => item.id !== action.payload);
 					} else {
 						item.qty--;
 					}
