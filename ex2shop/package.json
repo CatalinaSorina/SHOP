@@ -10,13 +10,13 @@
 		"react-scripts": "3.2.0",
 		"redux": "^4.0.4",
 		"redux-devtools-extension": "^2.13.8",
-		"uui": "^1.0.7"
+		"uui": "^1.0.7",
+		"predeploy": "yarn run build",
+		"deploy": "gh-pages -b master -d build"
 	},
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"predeploy": "yarn run build",
-		"deploy": "gh-pages -b master -d build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},
@@ -28,5 +28,5 @@
 		"development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
 	},
 	"devDependencies": {},
-	"homepage": "http://CatalinaSorina.github.io/SHOP"
+	"homepage": "https://catalinasorina.github.io/SHOP"
 }
